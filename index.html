@@ -447,7 +447,7 @@
 <section class="section">
   <div class="container is-max-desktop is-centered">
     <div class="content">
-      <h2 class="title is-3">Important dates</h2>
+      <h2 class="title is-3" id="important-dates">Important dates</h2>
           <ul>
         <li><strong>March 1, 2025</strong> – Registration Opens & Test Data Released</li>
         <li><strong>May 1, 2025</strong> – Validation Data Released</li>
@@ -473,34 +473,95 @@
 <section class="section">
   <div class="container is-max-desktop is-centered">
     <div class="content">
-      <h2 class="title is-3">Submission Guidelines</h2>
-      
-      <h3 class="title is-4">Docker Container</h3>
-      <p>We recommend challenge participants to submit their solutions as a Docker container, since it will make sure that we don't get any errors resulting from software incompatibility issues or any other similar reason. In this case, we recommend them to follow the instructions given under <a href="https//github.com/detecting-cheapfakes/detecting-cheapfakes-code">here</a>.</p>      
-    
-      <h3 class="title is-4">Standard Python Executable</h3>
-      <p>If the participants face any difficulties in submitting their solutions as a Docker container, or if they feel more comfortable submitting their solution as a standard Python project, they can do so by following the instructions below. It would also be helpful for us if the participants use PyTorch as the main library if they would like to submit their Python projects, however, this is not compulsory.</p>      
+      <h2 class="title is-3" id="submission-guidelines">Submission Guidelines</h2>
+
+      <!--Main task-->
+      <h3>Main Task</h3>
+      <p>Participants must submit a <strong>detailed verification report</strong> in <strong>Markdown (.md) format</strong> for each assigned case. The submission should follow these guidelines:</p>
+      <h4 >File Format and Naming</h4>
       <ul>
-        <li>We expect that the submitted code will be executable by a single command, for example:
-          <p><code>python solution.py &lt;path to folder containing the hidden test split file
-          private_test.json&gt;</code></p>
-        </li>
-
-        <li>Participants should expect the same format for both the <strong>private_test.json</strong> file and the <strong>public_test.json</strong> file.</li>
-
-        <li>To cope with any software incompatibility issues, we request the participants to provide a <code>requirements.txt</code> file along with their solutions, containing the names and specific version numbers of software packages used. This is fairly easy to do with both <strong>Conda</strong>(<code>conda list</code>), and <strong>Pip</strong>(<code>pip list</code>). We recommend that the participants use Conda and create a fresh environment before starting to write the code for their challenge solution.</li>
+          <li>Reports must be in <strong>Markdown (.md)</strong> format.</li>
+          <li>File names should follow the format: <code>teamname_caseID.md</code> (e.g., <code>TeamX_001.md</code>).</li>
       </ul>
 
-      <h3 class="title is-4">Jupyter Notebook</h3>
+      <h4>Report Structure</h4>
+      <p>Each report should include the following sections:</p>
+
+      <div style="background-color: #f0f0f0; border: 1px solid #b0b0b0; border-radius: 4px; padding: 10px;">
+        <pre>
+        <code>
+# Case Summary  
+- Brief overview of the verification findings.  
+
+# Content Classification  
+- **Tags:** Assign relevant tags based on platforms, people, brands, or specific topics (e.g., TikTok, Trump, Coca-Cola, Ukraine War, AI-generated).
+
+# Verified Evidence  
+- **Source Details:** Identify where the content originates (URLs, original posts, metadata).  
+- **Where? (Location):** Determine the correct geographical context.  
+- **When? (Time):** Establish the accurate timeframe.  
+- **Who? (Entities Involved):** Identify key individuals or groups.  
+- **Why? (Motivation or Intent):** Provide a reasoned explanation of possible intent.  
+
+# Forensic Analysis  
+- **Authenticity Assessment:** Determine if the content is synthetic, modified, or recaptured.  
+- **Verification Tools & Methods:** Clearly document the tools and techniques used.  
+- **Synthetic Type (if applicable):** Identify AI-generated content (e.g., GANs, Stable Diffusion).  
+- **Other Artifacts:** Note any detected anomalies or manipulations.  
+
+# Other Evidence & Findings  
+- **Supporting Sources:** Use additional fact-checks, reports, or metadata to back claims.  
+- **Cross-Checking Information:** Ensure verification through multiple independent sources.  
+
+# Clarity & Structure  
+- **Well-Organized Report:** Logically structured for readability.  
+- **Concise & Understandable Language:** Avoid unnecessary complexity or ambiguity.
+        </code>
+        </pre>
+      </div>
+      <p></p>
+      <h4>Verification Summarization Submission</h4>
+      <ul>
+          <li>If participating in the <strong>summarization subtask</strong>, submit a separate Markdown file:
+              <ul>
+                  <li><code>teamname_caseID_summary.md</code> (e.g., <code>TeamX_001_summary.md</code>).</li>
+              </ul>
+          </li>
+          <li>The summary should be <strong>clear, concise, and aimed at a general audience</strong>.</li>
+      </ul>
+
+      <h4>Submission Platform & Deadline</h4>
+      <ul>
+          <li>Reports must be submitted via the <strong>official challenge platform</strong> before the deadline.</li>
+          <li>Late submissions will <strong>not be accepted</strong>.</li>
+      </ul>
+
+
+      <!--OOC Subtask-->
+      <h3>OOC Subtask</h3>
+      <h4>Docker Container</h4>
+      <p>We recommend challenge participants to submit their solutions as a Docker container, since it will make sure that we don’t get any errors resulting from software incompatibility issues or any other similar reason. In this case, we recommend them to follow the instructions given under <a href="https://github.com/detecting-cheapfakes/detecting-cheapfakes-code">https://github.com/detecting-cheapfakes/detecting-cheapfakes-code</a>.</p>
+
+      <h4>Standard Python Executable</h4>
+      <p>If the participants face any difficulties in submitting their solutions as a Docker container, or if they feel more comfortable submitting their solution as a standard Python project, they can do so by following the instructions below. It would also be helpful for us if the participants use PyTorch as the main library if they would like to submit their Python projects, however, this is not compulsory.</p>
+
+      <ul>
+          <li>We expect that the submitted code will be executable by a single command, for example:
+              <pre><code>python solution.py &lt;path to folder containing the hidden test split file private_test.json&gt;</code></pre>
+          </li>
+          <li>Participants should expect the same format for both the <code>private_test.json</code> file and the <code>public_test.json</code> file.</li>
+          <li>To cope with any software incompatibility issues, we request the participants to provide a <code>requirements.txt</code> file along with their solutions, containing the names and specific version numbers of software packages used. This is fairly easy to do with both <strong>Conda</strong> (<code>conda list</code>), and <strong>Pip</strong> (<code>pip list</code>). We recommend that the participants use <strong>Conda</strong> and create a fresh environment before starting to write the code for their challenge solution.</li>
+      </ul>
+
+      <h4>Jupyter Notebook</h4>
       <p>Participants can also submit their solutions using Jupyter notebooks, by following the instructions below.</p>
-      <ul>
-        <li>
-          Participants should structure their code so that it allows us to change the input path by updating a single line in the main file, i.e., the submitted notebook should be executable after changing the INPUT_FOLDER parameter from the path for the public test split file, to the path for the private test split file, as shown below:
-          <p><code>INPUT_FOLDER = &lt;path to folder containing the hidden test split file private_test.json&gt;</code></p>
-        </li>
 
-        <li>Participants should expect the same format for both the <strong>private_test.json</strong> file and the <strong>public_test.json</strong> file.</li>
-      </ul>
+      <ul>
+          <li>Participants should structure their code so that it allows us to change the input path by updating a single line in the main file, i.e., the submitted notebook should be executable after changing the <code>INPUT_FOLDER</code> parameter from the path for the public test split file, to the path for the private test split file, as shown below:
+              <pre><code>INPUT_FOLDER = &lt;path to folder containing the hidden test split file private_test.json&gt;</code></pre>
+          </li>
+          <li>Participants should expect the same format for both the <code>private_test.json</code> file and the <code>public_test.json</code> file.</li>
+      </ul>  
     </div>
   </div>
 </section>
