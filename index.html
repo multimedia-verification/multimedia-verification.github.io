@@ -211,7 +211,78 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop is-centered">
+    <div class="content">
+      <h2 class="title is-3">Main Task</h2>
+      <h3 class="title is-4">Task Description </h3>
+      <p><strong>Objective:</strong> Verify the authenticity and context of multimedia content, <strong>which may be in a language other than English</strong>, and provide both a detailed report for fact-checkers and a concise summary for general readers. The languages of the content might not be in English.</p>
 
+      <p><strong>Input:</strong> Each case/task will provide (in a zip file):</p>
+      <ul>
+          <li><strong>Multimedia Content:</strong> Image(s) or video(s)</li>
+          <li><strong>Associated Context:</strong> Captions, descriptions, social media posts, news articles, metadata (if available)</li>
+          <li><strong>Additional Clues:</strong> Possible sources, claims, or fact-checker notes (if relevant)</li>
+      </ul>
+      
+      <p><strong>Output:</strong> A verification report (as a text file) <strong>in English</strong>. The report should include the following key information:</p>
+      
+      <ul>
+          <li><strong>Summary of Key Points:</strong> Provide a concise overview of the content, including relevant details. Clearly highlight any uncertainties and underline what is not yet known.</li>
+          <li><strong>Content Category:</strong> Assign relevant tags based on platforms, people, brands, or specific topics.</li>
+          <li><strong>Forensic Analysis Results:</strong>
+              <ul>
+                  <li><strong>Authenticity:</strong> Determine if the content is synthetic, modified, or recaptured.</li>
+                  <li><strong>Tools &amp; Methods Used:</strong> Specify the verification tools and techniques applied.</li>
+                  <li><strong>Synthetic Type (if applicable):</strong> Identify whether it was generated using GANs, Stable Diffusion, or other AI models.</li>
+                  <li><strong>Other Artifacts:</strong> Note any detected anomalies or manipulations.</li>
+              </ul>
+          </li>
+          <li><strong>Verified Evidence:</strong> State what can be confirmed about the video/photo based on available evidence.
+              <ul>
+                  <li><strong>Source Details:</strong> Where the content comes from (URLs, original posts, etc.)</li>
+                  <li><strong>Where?</strong> (Location)</li>
+                  <li><strong>When?</strong> (Time)</li>
+                  <li><strong>Who?</strong> (People, organizations, entities involved)</li>
+                  <li><strong>Why?</strong> (Possible motivations or intent)</li>
+              </ul>
+          </li>
+          <li><strong>Other Evidence &amp; Findings:</strong> Any additional relevant information, supporting materials, or external sources</li>
+      </ul>
+      
+      <p><strong>Note:</strong> For each evidence finding, specify the failure type if verification fails: <em>Indeterminate</em> (insufficient or ambiguous data), <em>Inconclusive</em> (attempted but no definitive result), or <em>Not Feasible</em> (limited expertise or tools).</p>
+      
+      <h3 class="title is-4">Competition Stages </h3>
+      
+      <ul>
+          <li><strong>Stage 1 - Training (March - April)</strong>
+              <ul>
+                  <li>Organizers provide 100 known cases with input and expected outputs.</li>
+                  <li>Participants register, explore tasks, and practice verification.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Stage 2 - Validation (May)</strong>
+              <ul>
+                  <li>Organizers release 20 new cases with input only.</li>
+                  <li>Participants must submit verification reports and describe their methodology. Participants may also submit a scientific paper detailing their approach.</li>
+                  <li>Submissions are evaluated, and <strong>only those who successfully pass the validation stage will qualify for the final competition</strong>.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Stage 3 - Real-World Verification (July 28 - August 8)</strong>
+              <ul>
+                  <li>Only validated participants advance to this stage.</li>
+                  <li>Organizers provide 10 real-time cases, reflecting ongoing misinformation challenges.</li>
+                  <li>Participants verify cases, submit results, and optionally submit a camera-ready paper.</li>
+              </ul>
+          </li>
+      </ul>
+      
+    </div>
+  </div>
+</section>
+  
 <section class="section">
   <div class="container is-max-desktop is-centered">
     <div class="content">
