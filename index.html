@@ -334,7 +334,7 @@
           </li>
       </ol>
       
-      <strong>Note:</strong> Not all points may be verifiable in every case. Clearly stating the failure type (<em>"indeterminate"</em>, <em>"inconclusive"</em>, or <em>"not feasible"</em>) is a valid verification outcome and should be included where necessary.
+      <p><strong>Note:</strong> Not all points may be verifiable in every case. Clearly stating the failure type (<em>"indeterminate"</em>, <em>"inconclusive"</em>, or <em>"not feasible"</em>) is a valid verification outcome and should be included where necessary.</p>
       
       <h4 class="title is-5">Verification Summarization</h4>
       The summarization subtask will be evaluated by a jury committee based on the following criteria:
@@ -345,10 +345,73 @@
           <li><strong>Accuracy:</strong> The summary should correctly reflect the key findings from the detailed verification report.</li>
       </ol>
       
-      The jury committee will assess submissions to ensure they effectively communicate the verification findings in a clear, concise, and accessible manner.
+      <p>The jury committee will assess submissions to ensure they effectively communicate the verification findings in a clear, concise, and accessible manner.</p>
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop is-centered">
+    <div class="content">
+      <h2 class="title is-3">OOC Subtask: Out-of-Context Detection</h2>
+      <h3 class="title is-4">Task Description</h3>
+
+      <p>In this task, participants are asked to come up with methods to determine whether a given image-caption pair is genuine (real) or falsely generated (fake). More specifically, given an <code>&lt;Image, Caption&gt;</code> pair as input, their proposed model should predict corresponding class labels <code>0 (real)</code> or <code>1 (fake)</code>.</p>
+  
+      <p>We acknowledge that this is a challenging task without prior knowledge of the image origin, even for human moderators. In fact, Luo et al. have verified this challenge with a study on human evaluators, who were instructed not to use search engines, where the average human accuracy was only around <strong>65%</strong>.</p>
+  
+      <h2>Dataset</h2>
+      <p>For this challenge, an augmented version of the COSMOS dataset will be used. A part of this dataset is sampled and assigned as the public dataset. The public dataset, consisting of the training, validation, and public test splits, is provided openly to participants for training and testing their algorithms. The remaining part of the COSMOS dataset is augmented with new samples and modified to create the hidden test split. The hidden test split is not made publicly available and will be used by the challenge organizers to evaluate the submissions.</p>
+  
+      <h3 class="title is-4">Challenge Dataset Statistics</h3>
+        
+      <table>
+          <tr>
+              <th>Dataset Split</th>
+              <th>Number of Images</th>
+              <th>Number of Captions</th>
+              <th>Context Annotation</th>
+          </tr>
+          <tr>
+              <td>Training</td>
+              <td>161,752</td>
+              <td>360,749</td>
+              <td>No</td>
+          </tr>
+          <tr>
+              <td>Validation</td>
+              <td>41,006</td>
+              <td>90,036</td>
+              <td>No</td>
+          </tr>
+          <tr>
+              <td>Public Test</td>
+              <td>1,000</td>
+              <td>2,000</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>Hidden Test</td>
+              <td>1,000</td>
+              <td>2,000</td>
+              <td>Yes</td>
+          </tr>
+      </table>
+  
+      <h3 class="title is-4">Evaluation Criteria</h3>
+      <p>Participant models will be evaluated and ranked according to two aggregate scores, composed of five and three metrics respectively.</p>
+  
+      <ul>
+          <li><strong>Effectiveness:</strong> Accuracy, precision, recall, F1-score, and Matthews correlation coefficient (MCC). Participants are asked to calculate these five metrics for their model and include the values in the results section of their submission.</li>
+          <li><strong>Efficiency:</strong> Latency, number of parameters, and model size. Participants are asked to calculate these three metrics for their model and include the values in the results section of their submission.</li>
+      </ul>
+  
+      <p>After the participants evaluate their own models on the public test split, they are asked to provide code and trained model weights to the organization committee, in order for their models to be evaluated on the hidden test split. Participants are allowed to submit their solutions in three alternative ways as described in Section <a href="#submission-guidelines">Submission Guidelines</a>, provided that they abide by the deadlines listed in Section <a href="#important-dates">Important Dates</a>.</p>
+
+    </div>
+  </div>
+</section>
+
   
 <section class="section">
   <div class="container is-max-desktop is-centered">
