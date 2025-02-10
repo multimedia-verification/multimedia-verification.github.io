@@ -278,7 +278,74 @@
               </ul>
           </li>
       </ul>
+      <h3 class="title is-4">Evaluation Criteria</h3>
+
+      <h4 class="title is-5">Overall Evaluation</h4>
+      Main score on each task:
+      <pre>Score = max(0, Q - w.T²)</pre>
+      <ul>
+          <li><strong>Q:</strong> Quality score assessed by professional fact-checkers (see details in Section <a href="#qualityevaluation">Quality Evaluation</a>).</li>
+          <li><strong>T:</strong> Time - number of hours after the task release.</li>
+          <li><strong>w:</strong> Weight - controls the penalty. (<em>w = 0.001</em>)</li>
+          <li><strong>Simply put, the score decreases proportionally to the square of the time spent.</strong></li>
+      </ul>
       
+      <h4 class="title is-5">Report Evaluation (Quality Q)</h4>
+      <a name="qualityevaluation"></a>
+      <ol>
+          <li><strong>Summary & Content Classification (10%)</strong>
+              <ul>
+                  <li><strong>Concise Overview</strong> – Clearly summarizes the findings, highlighting uncertainties and unknowns.</li>
+                  <li><strong>Correctly Categorized</strong> – Correctly assign relevant tags based on platforms, people, brands, or specific topics (e.g., TikTok, Trump, Coca-Cola, Ukraine War, AI-generated).</li>
+              </ul>
+          </li>
+      
+          <li><strong>Verified Evidence (50%)</strong>
+              <ul>
+                  <li><strong>Source Details</strong> – Identifies where the content originates (URLs, original posts, metadata).</li>
+                  <li><strong>Where? (Location)</strong> – Determines the correct geographical context.</li>
+                  <li><strong>When? (Time)</strong> – Establishes the accurate timeframe.</li>
+                  <li><strong>Who? (People, Organizations, Entities Involved)</strong> – Identifies key individuals or groups.</li>
+                  <li><strong>Why? (Motivation or Intent)</strong> – Provides a reasoned explanation of possible intent.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Forensic Analysis (15%)</strong>
+              <ul>
+                  <li><strong>Authenticity Assessment</strong> – Determines if the content is synthetic, modified, or recaptured.</li>
+                  <li><strong>Verification Tools & Methods</strong> – Clearly documents the tools and techniques used.</li>
+                  <li><strong>Synthetic Type (if applicable)</strong> – Identifies AI-generated content (e.g., GANs, Stable Diffusion).</li>
+                  <li><strong>Other Artifacts</strong> – Notes any detected anomalies or manipulations.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Other Evidence & Findings (15%)</strong>
+              <ul>
+                  <li><strong>Supporting Sources</strong> – Uses additional fact-checks, reports, or metadata to back claims.</li>
+                  <li><strong>Cross-Checking Information</strong> – Ensures verification through multiple independent sources.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Clarity & Structure (10%)</strong>
+              <ul>
+                  <li><strong>Well-Organized Report</strong> – Logically structured for readability.</li>
+                  <li><strong>Concise & Understandable Language</strong> – Avoids unnecessary complexity or ambiguity.</li>
+              </ul>
+          </li>
+      </ol>
+      
+      <strong>Note:</strong> Not all points may be verifiable in every case. Clearly stating the failure type (<em>"indeterminate"</em>, <em>"inconclusive"</em>, or <em>"not feasible"</em>) is a valid verification outcome and should be included where necessary.
+      
+      <h4 class="title is-5">Verification Summarization</h4>
+      The summarization subtask will be evaluated by a jury committee based on the following criteria:
+      <ol>
+          <li><strong>Clarity:</strong> The summary should be well-structured, easy to read, and clearly convey the verification findings.</li>
+          <li><strong>Conciseness:</strong> The summary should be brief while still covering the essential points of the verification.</li>
+          <li><strong>Readability:</strong> The language should be accessible to a general audience, avoiding technical jargon.</li>
+          <li><strong>Accuracy:</strong> The summary should correctly reflect the key findings from the detailed verification report.</li>
+      </ol>
+      
+      The jury committee will assess submissions to ensure they effectively communicate the verification findings in a clear, concise, and accessible manner.
     </div>
   </div>
 </section>
