@@ -11,19 +11,19 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="../static/css/index.css">
   <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
 </head>
 <body>
 
@@ -186,64 +186,131 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="static/images/intro.png">
-      <span>Deepfakes (left): These are falsified media created using sophisticated AI-based media manipulation tools and techniques. Cheapfakes (right): These include falsified media created with/without contemporary non-AI based editing tools which are easily accessible. Photoshopping tools can be used to tamper with images. Videos can be sped up or slowed down to change the intent or misrepresent the person in the video. Re-contextualizing includes associating falsified or unrelated claims with a genuine image to misrepresent events or persons. This challenge is focused on detecting re-contextualized cheapfakes.</span>
-    </div>
-  </div>
-</section> -->
+
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>The <b>Grand Challenge on Multimedia Verification</b> is an open competition where researchers and practitioners compete to verify the authenticity and context of multimedia content, addressing real-world misinformation challenges. Participants analyze provided images and videos, assess sources, detect manipulations, and submit a detailed verification report.</p>
-          <p>In addition to the main task, participants can also take part in the <b>OOC Subtask (Out-of-Context Detection)</b>, which focuses on identifying whether multimedia content has been misused in an incorrect or misleading context. This subtask continues the work from the Grand Challenge on Detecting Cheapfakes, previously held at ACM MMSys 2021, ACM MM 2022, IEEE ICME 2023, and ACM ICMR 2024.</p>
-          <p>There are no restrictions on methodology: solutions can be fully manual, fully automated, or a mix of OSINT, existing tools, and newly developed techniques.</p>
-          <p>Participants can choose to:</p>
-          <ul>
-            <li>Compete in the main task.</li>
-            <li>Compete in the OOC Subtask only.</li>
-            <li>Compete in both the main task and the OOC Subtask.</li>
-          </ul>
-          <p>Additionally, as part of the main task, participants may provide a concise verification summary for general readers. This component is optional and will be evaluated separately based on the main task results.</p>
-          <p>The competition consists of three stages: <b>Training</b>, <b>Validation</b>, and <b>Real-World Verification</b>. Participants first explore 100 known cases to familiarize themselves with the tasks. In the Validation stage, they must analyze 20 new cases and <i>pass an evaluation to qualify for the Real-World Verification Stage</i>, where 10 live verification cases will test their methods on fresh, evolving misinformation challenges.</p>
-          <p><b>Recognition & Awards.</b> Teams submitting a scientific paper may present at ACM Multimedia, subject to peer review. Only paper-submitting teams are eligible for awards, but all participants’ scores will be officially recognized.</p>
-        </div>
-      </div>
+  <div class="container is-max-desktop is-centered">
+    <div class="content">
+      <h2 class="title is-3">Main Task</h2>
+      <h3 class="title is-4">Task Description </h3>
+      <p><strong>Objective:</strong> Verify the authenticity and context of multimedia content, <strong>which may be in a language other than English</strong>, and provide both a detailed report for fact-checkers and a concise summary for general readers. The languages of the content might not be in English.</p>
+
+      <p><strong>Input:</strong> Each case/task will provide (in a zip file):</p>
+      <ul>
+          <li><strong>Multimedia Content:</strong> Image(s) or video(s)</li>
+          <li><strong>Associated Context:</strong> Captions, descriptions, social media posts, news articles, metadata (if available)</li>
+          <li><strong>Additional Clues:</strong> Possible sources, claims, or fact-checker notes (if relevant)</li>
+      </ul>
+      
+      <p><strong>Output:</strong> A verification report (as a text file) <strong>in English</strong>. The report should include the following key information:</p>
+      
+      <ul>
+          <li><strong>Summary of Key Points:</strong> Provide a concise overview of the content, including relevant details. Clearly highlight any uncertainties and underline what is not yet known.</li>
+          <li><strong>Content Category:</strong> Assign relevant tags based on platforms, people, brands, or specific topics.</li>
+          <li><strong>Forensic Analysis Results:</strong>
+              <ul>
+                  <li><strong>Authenticity:</strong> Determine if the content is synthetic, modified, or recaptured.</li>
+                  <li><strong>Tools &amp; Methods Used:</strong> Specify the verification tools and techniques applied.</li>
+                  <li><strong>Synthetic Type (if applicable):</strong> Identify whether it was generated using GANs, Stable Diffusion, or other AI models.</li>
+                  <li><strong>Other Artifacts:</strong> Note any detected anomalies or manipulations.</li>
+              </ul>
+          </li>
+          <li><strong>Verified Evidence:</strong> State what can be confirmed about the video/photo based on available evidence.
+              <ul>
+                  <li><strong>Source Details:</strong> Where the content comes from (URLs, original posts, etc.)</li>
+                  <li><strong>Where?</strong> (Location)</li>
+                  <li><strong>When?</strong> (Time)</li>
+                  <li><strong>Who?</strong> (People, organizations, entities involved)</li>
+                  <li><strong>Why?</strong> (Possible motivations or intent)</li>
+              </ul>
+          </li>
+          <li><strong>Other Evidence &amp; Findings:</strong> Any additional relevant information, supporting materials, or external sources</li>
+      </ul>
+      
+      <p><strong>Note:</strong> For each evidence finding, specify the failure type if verification fails: <em>Indeterminate</em> (insufficient or ambiguous data), <em>Inconclusive</em> (attempted but no definitive result), or <em>Not Feasible</em> (limited expertise or tools).</p>
+      
+      <h3 class="title is-4">Competition Stages </h3>
+      
+      <ul>
+          <li><strong>Stage 1 - Training (March - April)</strong>
+              <ul>
+                  <li>Organizers provide 100 known cases with input and expected outputs.</li>
+                  <li>Participants register, explore tasks, and practice verification.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Stage 2 - Validation (May)</strong>
+              <ul>
+                  <li>Organizers release 20 new cases with input only.</li>
+                  <li>Participants must submit verification reports and describe their methodology. Participants may also submit a scientific paper detailing their approach.</li>
+                  <li>Submissions are evaluated, and <strong>only those who successfully pass the validation stage will qualify for the final competition</strong>.</li>
+              </ul>
+          </li>
+      
+          <li><strong>Stage 3 - Real-World Verification (July 28 - August 8)</strong>
+              <ul>
+                  <li>Only validated participants advance to this stage.</li>
+                  <li>Organizers provide 10 real-time cases, reflecting ongoing misinformation challenges.</li>
+                  <li>Participants verify cases, submit results, and optionally submit a camera-ready paper.</li>
+              </ul>
+          </li>
+      </ul>
     </div>
-    <!--/ Abstract. -->
   </div>
 </section>
 
 <section class="section">
   <div class="container is-max-desktop is-centered">
     <div class="content">
-      <h2 class="title is-3" id="important-dates">Important dates</h2>
-          <ul>
-        <li><strong>March 1, 2025</strong> – Registration Opens & Test Data Released</li>
-        <li><strong>May 1, 2025</strong> – Validation Data Released</li>
-        <li><strong>May 15, 2025</strong> – Registration Closes</li>
-        <li><strong>May 30, 2025</strong> – Submission Deadline for Results, Reports, and Papers</li>
-        <li><strong>June 30, 2025</strong> – Notification of Paper and Results (Accepted teams move to the final stage)</li>
-        <li><strong>July 28 – August 8, 2025</strong> – Final Stage - Real World Verification
-            <ul>
-                <li><strong>July 28 – August 1, 2025</strong> – Task Release (Two tasks per day)</li>
-                <li><strong>August 8, 2025</strong> – Final Results Announcement</li>
-            </ul>
-        </li>
-        <li><strong>August 26, 2025</strong> – Camera-Ready Paper Submission Deadline</li>
-        <li><strong>October 27 – 31, 2025</strong> – Conference</li>
-    </ul>
+      <h2 class="title is-3">OOC Subtask: Out-of-Context Detection</h2>
+      <h3 class="title is-4">Task Description</h3>
+
+      <p>In this task, participants are asked to come up with methods to determine whether a given image-caption pair is genuine (real) or falsely generated (fake). More specifically, given an <code>&lt;Image, Caption&gt;</code> pair as input, their proposed model should predict corresponding class labels <code>0 (real)</code> or <code>1 (fake)</code>.</p>
+  
+      <p>We acknowledge that this is a challenging task without prior knowledge of the image origin, even for human moderators. In fact, <a href="https://aclanthology.org/2021.emnlp-main.545/">Luo et al.</a> have verified this challenge with a study on human evaluators, who were instructed not to use search engines, where the average human accuracy was only around <strong>65%</strong>.</p>
+  
+      <h2>Dataset</h2>
+      <p>For this challenge, an augmented version of the COSMOS dataset will be used. A part of this dataset is sampled and assigned as the public dataset. The public dataset, consisting of the training, validation, and public test splits, is provided openly to participants for training and testing their algorithms. The remaining part of the COSMOS dataset is augmented with new samples and modified to create the hidden test split. The hidden test split is not made publicly available and will be used by the challenge organizers to evaluate the submissions.</p>
+  
+      <h3 class="title is-4">Challenge Dataset Statistics</h3>
+        
+      <table>
+          <tr>
+              <th>Dataset Split</th>
+              <th>Number of Images</th>
+              <th>Number of Captions</th>
+              <th>Context Annotation</th>
+          </tr>
+          <tr>
+              <td>Training</td>
+              <td>161,752</td>
+              <td>360,749</td>
+              <td>No</td>
+          </tr>
+          <tr>
+              <td>Validation</td>
+              <td>41,006</td>
+              <td>90,036</td>
+              <td>No</td>
+          </tr>
+          <tr>
+              <td>Public Test</td>
+              <td>1,000</td>
+              <td>2,000</td>
+              <td>Yes</td>
+          </tr>
+          <tr>
+              <td>Hidden Test</td>
+              <td>1,000</td>
+              <td>2,000</td>
+              <td>Yes</td>
+          </tr>
+      </table>
     </div>
   </div>
 </section>
 
+  
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
