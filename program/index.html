@@ -52,7 +52,7 @@
 			<a class="navbar-item" href="/evaluation">
 			<div>Evaluation Criteria</div>
 			</a>
-      <a class="navbar-item" href="/program">
+		  <a class="navbar-item" href="/program">
 			<div>Program</div>
 			</a>
 			<div class="navbar-item has-dropdown is-hoverable">
@@ -249,100 +249,115 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Grand Challenge on Multimedia Verification</h2>
-        <p class="is-size-5">Thursday, <strong>October 30th</strong></p>
-
-        <div class="box">
-          <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-narrow">
-              <span class="tag is-dark is-medium">
-                <i class="far fa-clock" style="margin-right:.5rem;"></i>
-                9:00 AM – 10:30 AM
-              </span>
-            </div>
-            <div class="column is-narrow">
-              <span class="tag is-info is-medium">
-                <i class="fas fa-map-marker-alt" style="margin-right:.5rem;"></i>
-                Dean Swift 2, Hyatt
-              </span>
-            </div>
-          </div>
-          <p class="mt-3">
-            <a class="button is-link is-light is-medium" href="#" target="_blank" rel="noopener">
-              <span class="icon"><i class="fas fa-external-link-alt"></i></span>
-              <span>Event link (Whova)</span>
-            </a>
-            <!-- Replace href with actual Whova URL -->
-          </p>
-        </div>
-
-        <h3 class="title is-4 has-text-left">Agenda</h3>
-
-        <div class="content has-text-left">
-          <div class="box">
-            <p><strong>9:00</strong> — Welcome</p>
-            <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
-          </div>
-
-          <div class="box">
-            <p><strong>9:00 – 9:20 AM</strong> — Invited Talk (Zoom)</p>
-            <p>
-              <em>Speaker:</em> Hendrik B. Vold, an Associate Director with the Norwegian Institute of Journalism. Vold teaches applied generative AI for journalism, but his heart is really in OSINT and combatting disinformation. He has worked with developing a workflow for fast verification of media content aimed at providing trusted information for newsrooms, and he has run workshops nationally and globally for investigative journalists. Vold will be talking about his experiences when assessing new LLM workflows for automated verification.
-            </p>
-          </div>
-
-          <div class="box">
-            <p><strong>9:20 – 9:30 AM</strong> — Grand Challenge Overview</p>
-            <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
-          </div>
-
-          <div class="box">
-            <p><strong>9:30 – 10:10 AM</strong> — Team Presentations</p>
-            <p>(10 minutes per team, no individual Q&amp;A)</p>
-
-            <article class="message is-info">
-              <div class="message-body">
-                <p><strong>Please focus on what you did and what you learned</strong> — real lessons from the approach.</p>
-                <p>Skip introductions to the problem or general background; attendees are already familiar with the challenge.</p>
-                <p class="mt-2"><strong>Each team should:</strong></p>
-                <ul>
-                  <li>Present the proposed method clearly and concisely.</li>
-                  <li>Include two–three representative example cases (training, validation, or final).</li>
-                  <li>Highlight key findings, insights, and takeaways.</li>
-                </ul>
-              </div>
-            </article>
-
-            <div class="box" style="background:#fafafa;">
-              <p class="mb-2"><strong>9:30 – 9:40</strong><br>
-                <span>Fact-Checking at Scale: Multimodal AI for Authenticity and Context Verification in Online Media</span><br>
-                <em>Team:</em> Ragnarok — <em>Speaker:</em> Dang Vu
-              </p>
-              <hr>
-              <p class="mb-2"><strong>9:40 – 9:50</strong><br>
-                <span>Multimedia Verification Through Multi-Agent Deep Research Multimodal Large Language Models</span><br>
-                <em>Team:</em> QAI_Research — <em>Speaker:</em> Thi Le Chi Dang
-              </p>
-              <hr>
-              <p class="mb-0"><strong>9:50 – 10:00</strong><br>
-                <span>Ægis: AI-Enhanced OSINT for Multimedia Verification</span><br>
-                <em>Team:</em> HCMUS-matchalatte — <em>Speaker:</em> Tuan Luu
-              </p>
-            </div>
-          </div>
-
-          <div class="box">
-            <p><strong>10:00 – 10:30 AM</strong> — Retreat Onsite Meeting and Combined Q&amp;A Session</p>
-            <p><em>Facilitator:</em> Duc Tien Dang Nguyen</p>
-          </div>
-        </div>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>The <b>Grand Challenge on Multimedia Verification</b> is an open competition where researchers and practitioners compete to verify the authenticity and context of multimedia content, addressing real-world misinformation challenges. Participants analyze provided images and videos, assess sources, detect manipulations, and submit a detailed verification report.</p>
+          <p>In addition to the main task, participants can also take part in the <b>OOC Subtask (Out-of-Context Detection)</b>, which focuses on identifying whether multimedia content has been misused in an incorrect or misleading context. This subtask continues the work from the Grand Challenge on Detecting Cheapfakes, previously held at ACM MMSys 2021, ACM MM 2022, IEEE ICME 2023, and ACM ICMR 2024.</p>
+          <p>There are no restrictions on methodology: solutions can be fully manual, fully automated, or a mix of OSINT, existing tools, and newly developed techniques.</p>
+          <p>Participants can choose to:</p>
+          <ul>
+            <li>Compete in the main task.</li>
+            <li>Compete in the OOC Subtask only.</li>
+            <li>Compete in both the main task and the OOC Subtask.</li>
+          </ul>
+          <p>Additionally, as part of the main task, participants may provide a concise verification summary for general readers. This component is optional and will be evaluated separately based on the main task results.</p>
+          <p>The competition consists of three stages: <b>Training</b>, <b>Validation</b>, and <b>Real-World Verification</b>. Participants first explore <s>100</s> 50 known cases to familiarize themselves with the tasks. In the Validation stage, they must analyze <s>20</s> 10 new cases and <i>pass an evaluation to qualify for the Real-World Verification Stage</i>, where 10 live verification cases will test their methods on fresh, evolving misinformation challenges.</p>
+          <p><b>Recognition & Awards.</b> Teams submitting a scientific paper may present at ACM Multimedia, subject to peer review. Only paper-submitting teams are eligible for awards, but all participants’ scores will be officially recognized.</p>
+        <p> <em>Note:</em> To ensure the quality and accuracy of the cases, we have reduced the number of samples and only provide the high-quality ones.</p>
+	</div>
       </div>
     </div>
+    <!--/ Abstract. -->
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop is-centered">
+    <div class="content">
+      <h2 class="title is-3" id="important-dates">Important dates</h2>
+          <ul>
+        <li><strong>March 3, 2025</strong> – Registration Opens</li>
+	    <li><strong>March 7, 2025</strong> – Test Data Released</li>
+	    <li><s><strong>May 1, 2025</strong></s> <strong style="color:red;">May 16, 2025</strong> – Validation Data Released</li>
+	    <li><s><strong>May 15, 2025</strong></s> <strong style="color:red;">May 30, 2025</strong> – Registration Closes</li>
+	    <li><s><strong>May 30, 2025</strong></s> <s><strong>June 13, 2025</strong></s> <strong style="color:red;">June 27, 2025</strong> – Submission Deadline for Results, Reports, and Papers. Please refer to the <a href="https://multimedia-verification.github.io/submission/"> Submission Guideline</a> for more details.</li>
+	    <li><s><strong>June 30, 2025</strong></s> <strong style="color:red;">July 4, 2025</strong>  – Notification of Results-Main Task (Accepted teams move to the final stage)</li>
+	    <li style="color:red;"><strong>July 12, 2025</strong> – Subtask results notification</li>
+	    <li style="color:red;"><strong>July 18, 2025</strong> – Final paper submission (Main + Subtask)</li> 
+	    <li><strong>July 28 – August 8, 2025</strong> – Final Stage - Real World Verification</li>
+            <ul>
+                <li><strong>July 28 – August 1, 2025</strong> – Task Release (Two tasks per day)</li>
+	    <li style="color:red;"><strong>August 6, 2025</strong> – Final task submission deadline</li>
+                <li><strong>August 8, 2025</strong> – Final Results Announcement (main task results + paper acceptance) </li>
+            </ul>
+        </li>
+        <li><strong>August 26, 2025</strong> – Camera-Ready Paper Submission Deadline</li>
+        <li><strong>October 27 – 31, 2025</strong> – Conference</li>
+    </ul>
+    </div>
+	  <p style="margin-top: 15px; font-style: italic; color: #555;">
+    <em>Note:</em> Due to the careful preparation of the dataset for testing and validation, we have adjusted the timeline to ensure data quality and integrity.
+</p>
+  </div>
+	
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+<!-- Organizations Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Organized by</h2>
+    <div class="columns is-multiline is-centered is-vcentered">
+
+      <!-- Organization 1 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-128x128 is-inline-block">
+          <img src="./static/images/UiB.png" alt="Organization 1">
+        </figure>
+        <p class="mt-2">University of Bergen</p>
+      </div>
+
+      <!-- Organization 2 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-128x128 is-inline-block">
+          <img src="./static/images/hcmus.png" alt="Organization 2">
+        </figure>
+        <p class="mt-2">University of Science - VNUHCM-</p>
+      </div>
+
+      <!-- Organization 3 -->
+<!--       <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-128x128 is-inline-block">
+          <img src="./static/images/NICT_logo.png" alt="Organization 3">
+        </figure>
+        <p class="mt-2">NICT</p>
+      </div> -->
+
+      <!-- Organization 4 -->
+      <div class="column is-one-quarter has-text-centered">
+        <figure class="image is-128x128 is-inline-block">
+          <img src="./static/images/nordis.png" alt="Organization 4">
+        </figure>
+        <p class="mt-2">NORDIS</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 <footer class="footer">
