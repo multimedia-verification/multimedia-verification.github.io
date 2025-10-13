@@ -1,212 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Grand Challenge on Multimedia Verification - Program" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ACMMM25 — Grand Challenge on Multimedia Verification — Program</title>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Grand Challenge on Multimedia Verification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACMMM25-Grand Challenge on Multimedia Verification</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
-  <link rel="stylesheet" href="./static/css/bulma.min.css" />
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <link rel="stylesheet" href="./static/css/index.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
   <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-
-  <style>
-    body { font-family: "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    .program-time { white-space: nowrap; min-width: 120px; }
-    .agenda-row { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; }
-    @media (max-width: 640px) {
-      .agenda-row { grid-template-columns: 1fr; }
-      .program-time { white-space: normal; }
-    }
-  </style>
 </head>
 <body>
 
-<!-- Minimal Navbar (can extend if needed) -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+	<div class="navbar-brand">
+		<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div>
 
-  <div id="navbar-menu" class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="/">
-        <span class="icon"><i class="fas fa-home"></i></span>
-      </a>
-      <a class="navbar-item is-active" href="/program">
-        <div>Program</div>
-      </a>
-    </div>
-  </div>
+	<div id="navbar-menu" class="navbar-menu">
+		<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+			<a class="navbar-item" href="/">
+			<span class="icon">
+				<i class="fas fa-home"></i>
+			</span>
+			</a>
+			<a class="navbar-item" href="/tasks">
+			<div>Task Description</div>
+			</a>
+			<a class="navbar-item" href="/submission">
+			<div>Submission Guidelines</div>
+			</a>
+			<a class="navbar-item" href="/evaluation">
+			<div>Evaluation Criteria</div>
+			</a>
+      <a class="navbar-item" href="/program">
+			<div>Program</div>
+			</a>
+			<div class="navbar-item has-dropdown is-hoverable">
+			<a class="navbar-link">Challenge iteration</a>
+			<div class="navbar-dropdown">
+				<a class="navbar-item" href="https://detecting-cheapfakes.github.io/icmr-2024.html">
+				ACM ICMR 2024
+				</a>
+				<a class="navbar-item" href="https://detecting-cheapfakes.github.io/icme-2023.html">
+				IEEE ICME 2023
+				</a>
+				<a class="navbar-item" href="https://detecting-cheapfakes.github.io/acmmm-2022.html">
+				ACMMM 2022
+				</a>
+				<a class="navbar-item" href="https://2021.acmmmsys.org/cheapfake_challenge.php">
+				MMSys 2021
+				</a>
+			</div>
+			</div>
+		</div>
+	</div>
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.navbar-burger');
-    const menu = document.getElementById('navbar-menu');
-    if (burger && menu) {
-      burger.addEventListener('click', () => {
-        burger.classList.toggle('is-active');
-        menu.classList.toggle('is-active');
-      });
-    }
-  });
-</script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const burger = document.querySelector('.navbar-burger');
+		const menu = document.getElementById('navbar-menu');
 
-<!-- Header -->
-<section class="hero is-light">
+		if (burger && menu) {
+		burger.addEventListener('click', () => {
+			burger.classList.toggle('is-active');
+			menu.classList.toggle('is-active');
+		});
+		}
+	});
+</script>
+	  
+
+<section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h1 class="title is-2 has-text-centered">Grand Challenge on Multimedia Verification</h1>
-      <p class="subtitle has-text-centered">
-        Thursday, <strong>October 30</strong>
-      </p>
       <div class="columns is-centered">
-        <div class="column is-two-thirds">
-          <div class="box has-text-centered">
-            <p class="mb-2">
-              <span class="tag is-dark is-medium"><i class="far fa-clock mr-2"></i> 9:00 AM – 10:30 AM</span>
-              <span class="tag is-info is-medium ml-2"><i class="fas fa-map-marker-alt mr-2"></i> Dean Swift 2, Hyatt</span>
-            </p>
-            <p class="mt-3">
-              <a class="button is-link is-light is-medium" href="#" target="_blank" rel="noopener">
-                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
-                <span>Event link (Whova)</span>
-              </a>
-              <!-- Replace href with your actual Whova link -->
-            </p>
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ACMMM25 - Grand Challenge on Multimedia Verification</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www4.uib.no/en/find-employees/Duc.Tien.Dang.Nguyen">Duc-Tien Dang-Nguyen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Morten Langfeldt Dahlback</a><sup>2</sup>,</span>
+<!--             <span class="author-block">
+              <a>Minh-Son Dao</a><sup>3</sup>,
+            </span> -->
+<!--             <span class="author-block">
+              <a href="https://pakkunandy.github.io/">Anh-Duy Tran</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sohailahmedkhan.github.io/">Sohail Khan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Kha-Luan Pham</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a >Michael Riegler</a><sup>6</sup>,
+            </span>
+            <span class="author-block">
+              <a >Pål Halvorsen</a><sup>6</sup>,
+            </span>
+            <span class="author-block">
+              <a>Marc Gallofre Ocana</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Henrik B. Vold</a><sup>7</sup>,
+            </span>
+            <span class="author-block">
+              <a>Silje Førsund</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Minh-Triet Tran</a><sup>8</sup>,
+            </span> -->
+		  	<span class="author-block">
+              <a href="https://pakkunandy.github.io/">Anh-Duy Tran</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://sohailahmedkhan.github.io/">Sohail Khan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Kha-Luan Pham</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a >Michael Riegler</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a >Pål Halvorsen</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a>Marc Gallofre Ocana</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Henrik B. Vold</a><sup>6</sup>,
+            </span>
+            <span class="author-block">
+              <a>Silje Førsund</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a>Minh-Triet Tran</a><sup>7</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Bergen</span>
+            <span class="author-block"><sup>2</sup>Faktisk.no</span>
+<!--             <span class="author-block"><sup>3</sup>NICT</span> -->
+<!--             <span class="author-block"><sup>4</sup>KU Leuven</span>
+            <span class="author-block"><sup>5</sup>Aalto University</span>
+            <span class="author-block"><sup>6</sup>Simula Research Laboratory</span>
+            <span class="author-block"><sup>7</sup>Institutt for Journalistikk</span>
+            <span class="author-block"><sup>8</sup>University of Science - VNUHCM</span> -->
+			            <span class="author-block"><sup>3</sup>KU Leuven</span>
+            <span class="author-block"><sup>4</sup>Aalto University</span>
+            <span class="author-block"><sup>5</sup>Simula Research Laboratory</span>
+            <span class="author-block"><sup>6</sup>Institutt for Journalistikk</span>
+            <span class="author-block"><sup>7</sup>University of Science - VNUHCM</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScsz41_qac-a9tImXJuBT4bvY9KN2nR6DvAEHSyQOaZnXW_qg/viewform?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-solid fa-user-plus"></i>
+                  </span>
+                  <span>Registration</span>
+                  </a>
+              
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/multimedia-verification/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-brands fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <!-- Video Link. -->
+<!--               <span class="link-block">
+                <a href="https://groups.google.com/g/multimedia-verification"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa-solid fa-users-line"></i>
+                  </span>
+                  <span>Google group</span>
+                </a>
+              </span> -->
+            </div>
           </div>
         </div>
       </div>
-      <p class="has-text-centered is-size-6 has-text-grey">
-        Please focus on what was done and learned — share real lessons from the approach. Skip general background; attendees are familiar with the challenge.
-      </p>
     </div>
   </div>
 </section>
 
-<!-- Agenda -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/intro.png">
+      <span>Deepfakes (left): These are falsified media created using sophisticated AI-based media manipulation tools and techniques. Cheapfakes (right): These include falsified media created with/without contemporary non-AI based editing tools which are easily accessible. Photoshopping tools can be used to tamper with images. Videos can be sped up or slowed down to change the intent or misrepresent the person in the video. Re-contextualizing includes associating falsified or unrelated claims with a genuine image to misrepresent events or persons. This challenge is focused on detecting re-contextualized cheapfakes.</span>
+    </div>
+  </div>
+</section> -->
+
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Agenda</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Grand Challenge on Multimedia Verification</h2>
+        <p class="is-size-5">Thursday, <strong>October 30th</strong></p>
 
-    <!-- Welcome -->
-    <div class="box">
-      <div class="agenda-row">
-        <div class="program-time"><strong>9:00</strong></div>
-        <div>
-          <p class="is-size-5"><strong>Welcome</strong></p>
-          <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Invited Talk -->
-    <div class="box">
-      <div class="agenda-row">
-        <div class="program-time"><strong>9:00 – 9:20 AM</strong></div>
-        <div>
-          <p class="is-size-5"><strong>Invited Talk (Zoom)</strong></p>
-          <p><em>Speaker:</em> Hendrik B. Vold, Associate Director, Norwegian Institute of Journalism.</p>
-          <p>
-            Vold teaches applied generative AI for journalism, with a strong focus on OSINT and combating disinformation.
-            He has developed workflows for fast verification of media content to provide trusted information for newsrooms,
-            and has run national and global workshops for investigative journalists. He will discuss experiences assessing
-            new LLM workflows for automated verification.
+        <div class="box">
+          <div class="columns is-mobile is-multiline is-centered">
+            <div class="column is-narrow">
+              <span class="tag is-dark is-medium">
+                <i class="far fa-clock" style="margin-right:.5rem;"></i>
+                9:00 AM – 10:30 AM
+              </span>
+            </div>
+            <div class="column is-narrow">
+              <span class="tag is-info is-medium">
+                <i class="fas fa-map-marker-alt" style="margin-right:.5rem;"></i>
+                Dean Swift 2, Hyatt
+              </span>
+            </div>
+          </div>
+          <p class="mt-3">
+            <a class="button is-link is-light is-medium" href="#" target="_blank" rel="noopener">
+              <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+              <span>Event link (Whova)</span>
+            </a>
+            <!-- Replace href with actual Whova URL -->
           </p>
         </div>
-      </div>
-    </div>
 
-    <!-- Grand Challenge Overview -->
-    <div class="box">
-      <div class="agenda-row">
-        <div class="program-time"><strong>9:20 – 9:30 AM</strong></div>
-        <div>
-          <p class="is-size-5"><strong>Grand Challenge Overview</strong></p>
-          <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
-        </div>
-      </div>
-    </div>
+        <h3 class="title is-4 has-text-left">Agenda</h3>
 
-    <!-- Team Presentations (block header) -->
-    <div class="box">
-      <div class="agenda-row">
-        <div class="program-time"><strong>9:30 – 10:10 AM</strong></div>
-        <div>
-          <p class="is-size-5"><strong>Team Presentations</strong></p>
-          <p>(10 minutes per team, no individual Q&amp;A)</p>
-          <div class="content">
-            <p><strong>Guidance for teams:</strong></p>
-            <ul>
-              <li>Present the proposed method clearly and concisely.</li>
-              <li>Include two–three representative example cases (training, validation, or final).</li>
-              <li>Highlight key findings, insights, and takeaways.</li>
-            </ul>
+        <div class="content has-text-left">
+          <div class="box">
+            <p><strong>9:00</strong> — Welcome</p>
+            <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
           </div>
 
-          <!-- Individual team slots -->
-          <div class="box" style="background: #fafafa;">
-            <div class="agenda-row" style="margin-bottom: .75rem;">
-              <div class="program-time"><strong>9:30 – 9:40</strong></div>
-              <div>
-                <p class="mb-1"><strong>Fact-Checking at Scale: Multimodal AI for Authenticity and Context Verification in Online Media</strong></p>
-                <p class="is-size-6"><em>Team:</em> Ragnarok — <em>Speaker:</em> Dang Vu</p>
-              </div>
-            </div>
+          <div class="box">
+            <p><strong>9:00 – 9:20 AM</strong> — Invited Talk (Zoom)</p>
+            <p>
+              <em>Speaker:</em> Hendrik B. Vold, an Associate Director with the Norwegian Institute of Journalism. Vold teaches applied generative AI for journalism, but his heart is really in OSINT and combatting disinformation. He has worked with developing a workflow for fast verification of media content aimed at providing trusted information for newsrooms, and he has run workshops nationally and globally for investigative journalists. Vold will be talking about his experiences when assessing new LLM workflows for automated verification.
+            </p>
+          </div>
 
-            <div class="agenda-row" style="margin-bottom: .75rem;">
-              <div class="program-time"><strong>9:40 – 9:50</strong></div>
-              <div>
-                <p class="mb-1"><strong>Multimedia Verification Through Multi-Agent Deep Research Multimodal Large Language Models</strong></p>
-                <p class="is-size-6"><em>Team:</em> QAI_Research — <em>Speaker:</em> Thi Le Chi Dang</p>
-              </div>
-            </div>
+          <div class="box">
+            <p><strong>9:20 – 9:30 AM</strong> — Grand Challenge Overview</p>
+            <p><em>Presenter:</em> Duc Tien Dang Nguyen</p>
+          </div>
 
-            <div class="agenda-row">
-              <div class="program-time"><strong>9:50 – 10:00</strong></div>
-              <div>
-                <p class="mb-1"><strong>Ægis: AI-Enhanced OSINT for Multimedia Verification</strong></p>
-                <p class="is-size-6"><em>Team:</em> HCMUS-matchalatte — <em>Speaker:</em> Tuan Luu</p>
+          <div class="box">
+            <p><strong>9:30 – 10:10 AM</strong> — Team Presentations</p>
+            <p>(10 minutes per team, no individual Q&amp;A)</p>
+
+            <article class="message is-info">
+              <div class="message-body">
+                <p><strong>Please focus on what you did and what you learned</strong> — real lessons from the approach.</p>
+                <p>Skip introductions to the problem or general background; attendees are already familiar with the challenge.</p>
+                <p class="mt-2"><strong>Each team should:</strong></p>
+                <ul>
+                  <li>Present the proposed method clearly and concisely.</li>
+                  <li>Include two–three representative example cases (training, validation, or final).</li>
+                  <li>Highlight key findings, insights, and takeaways.</li>
+                </ul>
               </div>
+            </article>
+
+            <div class="box" style="background:#fafafa;">
+              <p class="mb-2"><strong>9:30 – 9:40</strong><br>
+                <span>Fact-Checking at Scale: Multimodal AI for Authenticity and Context Verification in Online Media</span><br>
+                <em>Team:</em> Ragnarok — <em>Speaker:</em> Dang Vu
+              </p>
+              <hr>
+              <p class="mb-2"><strong>9:40 – 9:50</strong><br>
+                <span>Multimedia Verification Through Multi-Agent Deep Research Multimodal Large Language Models</span><br>
+                <em>Team:</em> QAI_Research — <em>Speaker:</em> Thi Le Chi Dang
+              </p>
+              <hr>
+              <p class="mb-0"><strong>9:50 – 10:00</strong><br>
+                <span>Ægis: AI-Enhanced OSINT for Multimedia Verification</span><br>
+                <em>Team:</em> HCMUS-matchalatte — <em>Speaker:</em> Tuan Luu
+              </p>
             </div>
-          </div> <!-- end inner box -->
+          </div>
+
+          <div class="box">
+            <p><strong>10:00 – 10:30 AM</strong> — Retreat Onsite Meeting and Combined Q&amp;A Session</p>
+            <p><em>Facilitator:</em> Duc Tien Dang Nguyen</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Retreat / Q&A -->
-    <div class="box">
-      <div class="agenda-row">
-        <div class="program-time"><strong>10:00 – 10:30 AM</strong></div>
-        <div>
-          <p class="is-size-5"><strong>Retreat Onsite Meeting and Combined Q&amp;A Session</strong></p>
-          <p><em>Facilitator:</em> Duc Tien Dang Nguyen</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
+
+
 
 <footer class="footer">
   <div class="container">
     <div class="content has-text-left">
-      <p>© 2025 Grand Challenge on Multimedia Verification</p>
+      <p>Borrowed from <a href="https://github.com/nerfies/nerfies.github.io">source code</a></p>
     </div>
   </div>
 </footer>
